@@ -29,12 +29,12 @@
             Home
           </el-dropdown-item>
         </router-link>
-        <el-dropdown-item divided>
+        <!-- <el-dropdown-item divided>
           <span
             style="display:block;"
             @click="logout"
           >LogOut</span>
-        </el-dropdown-item>
+        </el-dropdown-item> -->
       </el-dropdown-menu>
     </el-dropdown>
   </div>
@@ -45,7 +45,7 @@ import Breadcrumb from '@/components/Breadcrumb/index.vue'
 import Hamburger from '@/components/Hamburger/index.vue'
 import { Component, Vue } from 'vue-property-decorator'
 import { AppModule } from '@/store/modules/app'
-import { UserModule } from '@/store/modules/user'
+// import { UserModule } from '@/store/modules/user'
 
 @Component({
   components: {
@@ -59,7 +59,7 @@ export default class Navbar extends Vue {
   }
 
   get avatar() {
-    return UserModule.avatar
+    return 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif'
   }
 
   private toggleSideBar() {
@@ -67,9 +67,9 @@ export default class Navbar extends Vue {
   }
 
   private logout() {
-    UserModule.LogOut().then(() => {
-      location.reload() // 为了重新实例化vue-router对象 避免bug
-    })
+    // UserModule.LogOut().then(() => {
+    //   location.reload() // 为了重新实例化vue-router对象 避免bug
+    // })
   }
 }
 </script>

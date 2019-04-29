@@ -1,8 +1,8 @@
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ? '/vue-typescript-admin-template/' : '/',
+  publicPath: process.env.NODE_ENV === 'production' ? './' : './',
 
   pwa: {
-    name: 'vue-typescript-admin-template'
+    name: './'
   },
 
   lintOnSave: process.env.NODE_ENV !== 'production'

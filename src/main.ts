@@ -20,6 +20,7 @@ import App from '@/App.vue'
 import store from '@/store'
 import router from '@/router'
 import '@/registerServiceWorker'
+import * as filters from '@/filters' // global filter
 
 Vue.use(ElementUI)
 Vue.use(SvgIcon, {
@@ -29,6 +30,10 @@ Vue.use(SvgIcon, {
 })
 
 Vue.config.productionTip = false
+
+Object.keys(filters).forEach(key => {
+	Vue.filter(key, filters[key])
+})
 
 new Vue({
   router,

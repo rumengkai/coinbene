@@ -63,7 +63,7 @@
 <script lang="ts">
 import { isValidUsername } from '@/utils/validate'
 import { Component, Vue, Watch } from 'vue-property-decorator'
-import { UserModule } from '@/store/modules/user'
+// import { UserModule } from '@/store/modules/user'
 import { Route } from 'vue-router'
 import { Form as ElForm } from 'element-ui'
 
@@ -114,13 +114,13 @@ export default class Login extends Vue {
   private handleLogin() {
     (this.$refs.loginForm as ElForm).validate((valid: boolean) => {
       if (valid) {
-        this.loading = true
-        UserModule.Login(this.loginForm).then(() => {
-          this.loading = false
-          this.$router.push({ path: this.redirect || '/' })
-        }).catch(() => {
-          this.loading = false
-        })
+        // this.loading = true
+        // UserModule.Login(this.loginForm).then(() => {
+        //   this.loading = false
+        //   this.$router.push({ path: this.redirect || '/' })
+        // }).catch(() => {
+        //   this.loading = false
+        // })
       } else {
         return false
       }
